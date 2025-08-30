@@ -39,12 +39,23 @@ fun NetworkErrorCard(message: String) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Icon(
-                painter = painterResource(id = R.drawable.ic_no_network),
-                contentDescription = "Network error",
-                tint = MaterialTheme.colorScheme.onErrorContainer,
-                modifier = Modifier.size(48.dp)
-            )
+
+            if(message == "User not found"){
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_profile_not_found),
+                    contentDescription = "Network error",
+                    tint = MaterialTheme.colorScheme.onErrorContainer,
+                    modifier = Modifier.size(48.dp)
+                )
+            }else{
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_no_network),
+                    contentDescription = "Network error",
+                    tint = MaterialTheme.colorScheme.onErrorContainer,
+                    modifier = Modifier.size(48.dp)
+                )
+            }
+
             Text(
                 text = message,
                 style = MaterialTheme.typography.bodyLarge,
